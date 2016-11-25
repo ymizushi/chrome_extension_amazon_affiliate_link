@@ -1,5 +1,15 @@
 $(function() {
+    // TODO: !! not working !!
+    var affiliate_key_list = "";
+    chrome.runtime.sendMessage({method : "getLocalStorage", key : "affiliate_key_list"}, function(response) {
+        affiliate_key_list = response.data;
+    });
+    
     var affiliate_tags = ["hirokikana-22"];
+    alert(affiliate_key_list);
+    if (affiliate_key_list) {
+        affiliate_tags = affiliate_key_list.replace(/ /g, "").split(",");
+    }
     
     $("a").each(function() {
         if ($(this).attr('href').indexOf("amazon.co.jp") > -1) {

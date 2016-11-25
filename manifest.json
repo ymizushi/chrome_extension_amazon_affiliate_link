@@ -5,9 +5,15 @@
     "description": "amazon link from to generate affiliate link automatic",
     "version": "0.1",
 
+    "background": {
+        "scripts": ["src/js/background.js"]
+    },
+    
+    "options_page": "src/html/option.html",
+    
     "content_scripts": [
         {
-            "matches":["http://*/*"],
+            "matches":["http://*/*", "https://*/*"],
             "js":["src/js/jquery-3.1.1.min.js", "src/js/convert_amazon_link.js"],
             "run_at": "document_idle"
         }
