@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "Amazon Affiliate Link Generator",
+    "description": "amazon link from to generate affiliate link automatic",
+    "version": "0.1",
+
+    "content_scripts": [
+        {
+            "matches":["http://*/*"],
+            "js":["src/js/jquery-3.1.1.min.js", "src/js/convert_amazon_link.js"],
+            "run_at": "document_idle"
+        }
+    ],
+
+    "permissions": [
+        "activeTab"
+    ]
+}
+        
+    
