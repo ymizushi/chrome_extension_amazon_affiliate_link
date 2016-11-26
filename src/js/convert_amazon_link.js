@@ -6,7 +6,6 @@ $(function() {
     });
     
     var affiliate_tags = ["hirokikana-22"];
-    alert(affiliate_key_list);
     if (affiliate_key_list) {
         affiliate_tags = affiliate_key_list.replace(/ /g, "").split(",");
     }
