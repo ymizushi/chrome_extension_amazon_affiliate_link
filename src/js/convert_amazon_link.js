@@ -19,6 +19,9 @@ $(function() {
 				}else{
 					replace = url + "?" + affiliate_key;
 				}
+				if (replace.match(/\/[a-z]+-22/)) {
+					replace = replace.replace(/\/[a-z]+-22/, "/" + affiliate_key);
+				}
 				$(this).attr('href', replace);
 			}
 		});
